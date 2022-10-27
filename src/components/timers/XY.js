@@ -11,7 +11,6 @@ const XY = ({xValue, yValue}) => {
 
     const [seconds, setSeconds] = useState(0);
     const [x,setXValue] = useState(1);
-    const [y,setYValue] = useState(0);
     const [isActive, setActive] = useState(false);
     const [isPaused, setPaused] = useState(false);
     const [isDone, setDone] = useState(false);
@@ -40,7 +39,7 @@ const XY = ({xValue, yValue}) => {
     return () => {
       clearInterval(intervalID);
     };
-  }, [isActive, isPaused, isDone, seconds, x]);
+  }, [isActive, isPaused, isDone, seconds, x, xValue, yValue]);
 
   function doStart() {
     setActive(true);

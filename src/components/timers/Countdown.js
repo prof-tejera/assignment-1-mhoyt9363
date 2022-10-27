@@ -9,7 +9,6 @@ import ElapsedTime from "../generic/ElapsedTime";
 
 const Countdown = ({ countDownStart }) => {
   const [seconds, setSeconds] = useState(countDownStart);
-  const [start, setStart] = useState(countDownStart);
   const [isActive, setActive] = useState(false);
   const [isPaused, setPaused] = useState(false);
   const [isDone, setDone] = useState(false);

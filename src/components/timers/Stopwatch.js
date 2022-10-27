@@ -5,7 +5,6 @@ import ElapsedTime from "../generic/ElapsedTime";
 
 const Stopwatch = ({ timeCap }) => {
   const [seconds, setSeconds] = useState(0);
-  const [cap, setCap] = useState(timeCap);
   const [isActive, setActive] = useState(false);
   const [isPaused, setPaused] = useState(false);
   const [isDone, setDone] = useState(false);
@@ -16,7 +15,7 @@ const Stopwatch = ({ timeCap }) => {
     if (isActive && (isPaused === false) && (isDone === false)) {
       intervalID = setInterval(() => {
         setSeconds(seconds + 1);
-        if ((seconds + 1) >= cap) {
+        if ((seconds + 1) >= timeCap) {
             setDone(true);
         }
       }, 1000);
@@ -26,7 +25,7 @@ const Stopwatch = ({ timeCap }) => {
     return () => {
       clearInterval(intervalID);
     };
-  }, [isActive, isPaused, isDone, seconds]);
+  }, [isActive, isPaused, isDone, seconds, timeCap]);
 
   function doStart() {
     setActive(true);
@@ -58,7 +57,7 @@ const Stopwatch = ({ timeCap }) => {
     <div>
         <ElapsedTime label="" seconds={seconds} />
         <Buttons isActive = {isActive} isDone = {isDone} isPaused={isPaused} doStart={doStart} doPauseResume={doPauseResume} doFastForward={doFastForward} doReset={doReset} />
-        <div style={capStyle}>Time cap: {convertSeconds({ seconds: cap })}</div>
+        <div style={capStyle}>Time cap: {convertSeconds({ seconds: timeCap })}</div>
     </div>
   );
 };

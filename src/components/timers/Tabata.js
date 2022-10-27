@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Buttons from "../generic/Buttons";
 import ElapsedTime from "../generic/ElapsedTime";
 import convertSeconds from "../../utils/helpers";
-import { ServerStyleSheet } from "styled-components";
 
 //------------------------------------------
 // 
@@ -10,7 +9,6 @@ import { ServerStyleSheet } from "styled-components";
 
 const Tabata = ({tabataRounds, tabataWork, tabataRest}) => {
 
-    const [seconds, setSeconds] = useState(0);
     const [rounds,setRounds] = useState(1);
     const [work,setWork] = useState(0);
     const [rest,setRest] = useState(0);
@@ -45,7 +43,7 @@ const Tabata = ({tabataRounds, tabataWork, tabataRest}) => {
     return () => {
         clearInterval(intervalID);
     };
-    }, [isActive, isPaused, isDone, work, rest, rounds]);
+    }, [isActive, isPaused, isDone, work, rest, rounds, tabataWork, tabataRest, tabataRounds]);
 
     function doStart() {
     setActive(true);
@@ -56,7 +54,6 @@ const Tabata = ({tabataRounds, tabataWork, tabataRest}) => {
     }
 
     function doFastForward() {
-    setSeconds(tabataRest);
     setWork(tabataWork);
     setRest(tabataRest);
     setRounds(tabataRounds)
@@ -66,7 +63,6 @@ const Tabata = ({tabataRounds, tabataWork, tabataRest}) => {
     }
 
     function doReset() {
-    setSeconds(0);
     setWork(0);
     setRest(0);
     setRounds(1)
