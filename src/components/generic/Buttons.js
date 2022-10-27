@@ -1,5 +1,5 @@
 //------------------------------------------
-// 
+// Build the common buttons for all timers
 //------------------------------------------
 
 const Buttons = ({ style={}, isStarted, isDone, isPaused, doStart, doPauseResume, doFastForward, doReset}) => {
