@@ -1,24 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-
 import Stopwatch from "../components/timers/Stopwatch";
 import Countdown from "../components/timers/Countdown";
 import XY from "../components/timers/XY";
 import Tabata from "../components/timers/Tabata";
 
 const Timers = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  column-count: 2;
+  align-items: top;
+  width: 800px;
+  color: blue;
 `;
 
 const Timer = styled.div`
   border: 1px solid gray;
   padding: 20px;
   margin: 10px;
+  height: 125px;
   font-size: 1.5rem;
   text-align: center;
-  horizontal-align: center;
 `;
 
 const TimerTitle = styled.div`
@@ -46,14 +46,16 @@ const TimersView = () => {
   ];
 
   return (
-    <Timers>
-      {timers.map((timer) => (
-        <Timer key={`timer-${timer.title}`}>
-          <TimerTitle>{timer.title}</TimerTitle>
-          {timer.C}
-        </Timer>
-      ))}
-    </Timers>
+    <div >
+        <Timers>
+          {timers.map((timer) => (
+            <Timer key={`timer-${timer.title}`}>
+              <TimerTitle>{timer.title}</TimerTitle>
+              {timer.C}
+            </Timer>
+          ))}
+        </Timers>
+    </div>
   );
 };
 

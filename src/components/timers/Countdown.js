@@ -4,7 +4,8 @@ import Buttons from "../generic/Buttons";
 import ElapsedTime from "../generic/ElapsedTime";
 
 //------------------------------------------
-// 
+// This timer starts from the specified
+// number of seconds and counts down to 0.
 //------------------------------------------
 
 const Countdown = ({ countDownStart }) => {

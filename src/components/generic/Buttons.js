@@ -1,5 +1,11 @@
 //------------------------------------------
-// Build the common buttons for all timers
+// This component will build the common
+// buttons for all timers.
+// Start - starts the timer
+// Pause/Res - pauses and resumes the timer
+//            (future enhancement to change text on context)
+// Fast Forward - moves the timers the the end
+// Reset - sets the timers back to the start
 //------------------------------------------
 
 const Buttons = ({ style={}, isStarted, isDone, isPaused, doStart, doPauseResume, doFastForward, doReset}) => {

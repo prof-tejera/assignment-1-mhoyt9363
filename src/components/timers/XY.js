@@ -4,7 +4,9 @@ import ElapsedTime from "../generic/ElapsedTime";
 import convertSeconds from "../../utils/helpers";
 
 //------------------------------------------
-// 
+// This timer is similar to a lap timer
+// where it will track the number of laps(x)
+// and the number of min:sec for each lap.
 //------------------------------------------
 
 const XY = ({xValue, yValue}) => {

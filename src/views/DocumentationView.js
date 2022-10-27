@@ -33,6 +33,24 @@ const Documentation = () => {
               type: "string",
               defaultValue: "medium",
             },
+            {
+              prop: "ElapsedTime",
+              description: "Displays the seconds elapsed so far",
+              type: "component",
+              defaultValue: "00:00",
+            },
+            {
+              prop: "Buttons",
+              description: "Displays the buttons required for a timer",
+              type: "<button>",
+              defaultValue: "Start, Pause/Res, FF, Reset",
+            },
+            {
+              prop: "convertSeconds",
+              description: "A helper that converts seconds to min:sec",
+              type: "string",
+              defaultValue: "00:00",
+            },
           ]}
         />
       </div>

@@ -11,18 +11,19 @@ const Container = styled.div`
   overflow: auto;
 `;
 
+const liStyle = {
+  padding: 2,
+  display: "inline",
+  border: "1px solid black",
+  height: 30,
+  textAlign: "center",
+  fontSize: 17,
+  backgroundColor: "Linen",
+
+}
+
 const Nav = () => {
-  
-  const liStyle = {
-    padding: 2,
-    display: "inline",
-    border: "1px solid black",
-    width: 70,    
-    height: 30,
-    textAlign: "center",
-    backgroundColor: "lightgreen",
-    fontSize: 11,
-  }
+
   return (
     <nav >
       <ul>

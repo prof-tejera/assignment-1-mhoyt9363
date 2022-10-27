@@ -8,6 +8,13 @@ const Stopwatch = ({ timeCap }) => {
   const [isActive, setActive] = useState(false);
   const [isPaused, setPaused] = useState(false);
   const [isDone, setDone] = useState(false);
+  
+//----------------------------------------------
+// This timer will start at 0 and time an event.
+// There is a definable time cap when it will
+// stop.
+//----------------------------------------------
+
 
   useEffect(() => {
     let intervalID = null;

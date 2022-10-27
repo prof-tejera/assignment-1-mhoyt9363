@@ -4,7 +4,9 @@ import ElapsedTime from "../generic/ElapsedTime";
 import convertSeconds from "../../utils/helpers";
 
 //------------------------------------------
-// 
+// This tabata timer will time work effort
+// then rest time for a specified number
+// of rounds.
 //------------------------------------------
 
 const Tabata = ({tabataRounds, tabataWork, tabataRest}) => {
