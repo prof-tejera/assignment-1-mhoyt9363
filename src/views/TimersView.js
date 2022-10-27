@@ -8,7 +8,7 @@ import Tabata from "../components/timers/Tabata";
 
 const Timers = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 `;
 
@@ -17,16 +17,32 @@ const Timer = styled.div`
   padding: 20px;
   margin: 10px;
   font-size: 1.5rem;
+  text-align: center;
+  horizontal-align: center;
 `;
 
-const TimerTitle = styled.div``;
+const TimerTitle = styled.div`
+text-align: center;
+padding-bottom: 3px`;
+
+//-------------------------------------------
+// Hard coded values (in seconds when it's a 
+// time value) that simulates user entry
+//-------------------------------------------
+const stopWatchCap = 60;
+const countDownStart = 33;
+const xyXValue = 3;
+const xyYValue = 5;
+const tabataWorkValue = 10;
+const tabataRestValue = 5;
+const tabataRoundsValue = 3;
 
 const TimersView = () => {
   const timers = [
-    { title: "Stopwatch", C: <Stopwatch /> },
-    { title: "Countdown", C: <Countdown /> },
-    { title: "XY", C: <XY /> },
-    { title: "Tabata", C: <Tabata /> },
+    { title: "Stopwatch", C: <Stopwatch timeCap={stopWatchCap}/> },
+    { title: "Countdown", C: <Countdown countDownStart={countDownStart}/> },
+    { title: "XY", C: <XY xValue={xyXValue} yValue={xyYValue}/> },
+    { title: "Tabata", C: <Tabata tabataRounds={tabataRoundsValue} tabataWork={tabataWorkValue} tabataRest={tabataRestValue}/> },
   ];
 
   return (

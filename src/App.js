@@ -12,13 +12,24 @@ const Container = styled.div`
 `;
 
 const Nav = () => {
+  
+  const liStyle = {
+    padding: 2,
+    display: "inline",
+    border: "1px solid black",
+    width: 70,    
+    height: 30,
+    textAlign: "center",
+    backgroundColor: "lightgreen",
+    fontSize: 11,
+  }
   return (
-    <nav>
+    <nav >
       <ul>
-        <li>
+        <li style = {liStyle}>
           <Link to="/">Timers</Link>
         </li>
-        <li>
+        <li style = {liStyle}>
           <Link to="/docs">Documentation</Link>
         </li>
       </ul>
