@@ -11,14 +11,26 @@ const Container = styled.div`
   overflow: auto;
 `;
 
+const liStyle = {
+  padding: 2,
+  display: "inline",
+  border: "1px solid black",
+  height: 30,
+  textAlign: "center",
+  fontSize: 17,
+  backgroundColor: "Linen",
+
+}
+
 const Nav = () => {
+
   return (
-    <nav>
+    <nav >
       <ul>
-        <li>
+        <li style = {liStyle}>
           <Link to="/">Timers</Link>
         </li>
-        <li>
+        <li style = {liStyle}>
           <Link to="/docs">Documentation</Link>
         </li>
       </ul>
